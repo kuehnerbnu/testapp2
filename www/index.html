@@ -59,10 +59,12 @@
 		document.addEventListener("deviceReady", deviceReady, false);
 
 		function deviceReady() {
+		  alert("deviceReady");
 		  deviceReadyDeferred.resolve();
 		}
 
 		$(document).one("mobileinit", function () {
+		  alert("mobileinit");
 		  jqmReadyDeferred.resolve();
 		});
 
@@ -70,6 +72,8 @@
 
 		function doWhenBothFrameworksLoaded() {
 			// TBD
+			alert("doWhenBothFrameWorksLoaded...")
+			
 			navigator.geolocation.getCurrentPosition (function (pos)
 			{
 			  var lat = pos.coords.latitude;
